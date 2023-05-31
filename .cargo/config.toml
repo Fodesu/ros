@@ -1,0 +1,10 @@
+[unstable]
+build-std = ["core", "compiler_builtins"] # 必须重新编译 core 和 compiler_builtins 库
+build-std-features = ["compiler-builtins-mem"] # 提供了C库 Memset / Memcpy / Memcmp
+
+
+[build]
+target = "x86_64-ros.json"
+
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
